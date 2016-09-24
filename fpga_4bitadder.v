@@ -29,15 +29,7 @@ module fpga_4bitadder;
 	assign r02[3:0] ={{A[3]},{B[3]},{A[2]},{B[2]}};//outc2x3y3x2y2
 	assign b01[3:0] = {{1'b0},{1'b0},{A[2]},{B[2]}};//outc200x2y2
 	assign h02[3:0] = {{1'b0},{1'b0},{A[3]},{B[3]}};//outc300x3y3;
-	// Outputs//1010+0101;x+y,x0=0,x1=1,x2=0,x3=1:y0=1,y1=0,y2=1,y3=0
-	//x4x3x2x1//y1y2y3y4
-	//assign t01 = 5'b1100z;//x0y0 00 z
-	//assign t02 = 5'bz0010;//outc100x1y1
-	//assign r01 = 5'bz0011;//outc100x0y0
-	//assign b02 = 5'bz0z10;//outc10outc4x1y1;
-	//assign r02 = 5'bz1101;//outc2x3y3x2y2
-	//assign b01 = 5'bz0001;//outc200x2y2
-	//assign h02 = 5'bz0011;//outc300x3y3;
+
 	initial
 	begin
 	sramConfig = 144'b1001011010010110_1001011010010110_1110100011101000_1001011010010110_1001011010010110_0000000000000000_1110100011101000_1110100011101000_1110100011101000;
@@ -64,29 +56,11 @@ module fpga_4bitadder;
 	always
 	#100 clk=~clk;
 	initial begin
-		// Initialize Inputs
 		clk = 0;
 		reset = 1;
 		#101 reset = 0;
 		#5 A=4'b0111;
 		#5 B=4'b0111;
-		 
-//		sramConfig = 0;
-//		cbconfig = 0;
-//		sconfig = 0;
-//		t01 = 0;
-//		h01 = 0;
-//		h02 = 0;
-//		r01 = 0;
-//		r02 = 0;
-//		b01 = 0;
-//		b02 = 0;
-		
-		// Wait 100 ns for global reset to finish
-		
-        
-		// Add stimulus here
-
 	end
       
 endmodule
