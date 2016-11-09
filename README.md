@@ -11,4 +11,16 @@ The switch box in our architecture was designed to route the signals in  all the
   <img style="width:100%" src="https://github.com/krypto94/FPGA/blob/master/SWITCH%20BOX.png">
 </div>
 
-L0 can be connected to T0,R0 and B0 only, similarly for all the other data lines. The data flow in between the any two nodes is controlled by two D flip-flops which can be programmed at configuration time.So, for a 5-bit wide channel width architecture there will be 60 SRAM bits to configure.In switchBox.v the  input-output port in corresponds to the configuration bits.inwireL,inwireR,inwireB,inwireT are the ports of the switch box and are 5 bit wide.
+L0 can be connected to T0,R0 and B0 only, similarly for all the other data lines. The data flow in between the any two nodes is controlled by two D flip-flops which can be programmed at configuration time.So, for a 5-bit wide channel width architecture there will be 60 SRAM bits to configure.In switchBox.v the  input-output port in corresponds to the configuration bits.inwireL, inwireR, inwireB, inwireT are the ports of the switch box and are 5 bit wide.
+#Connection Box
+
+
+
+
+#Logic Block
+
+The BLE or the basic logic element of an FPGA consists of an LUT(Look up table) , 2 multiplexers and a D flip-flop. The LUT in this design is a 4-input LUT as numerous studies have shown that empirically 4-input LUT performance is better than other options.LUT is made up of D-Flip Flops and stores the truth table values of the boolean function to be implemented.A 16X1 MUX selects the corresponding value and forwards it to the next part of the BLE.the next part of the BLE has a D-Flip Flop for storing states. However, an auxiliary connection is also provided to bypass the D Flip-Flop in order to implement combinational circuits.
+<div style="width:40%; margin:auto; margin-bottom:10px; margin-top:20px;">
+  <img style="width:100%" src="https://github.com/krypto94/FPGA/blob/master/CLB_Block_Diagram.png">
+</div> 
+ 
