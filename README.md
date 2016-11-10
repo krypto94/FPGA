@@ -20,7 +20,7 @@ L0 can be connected to T0,R0 and B0 only, similarly for all the other data lines
 #Connection Box
 
 <div style="width:40%; margin:auto; margin-bottom:10px; margin-top:20px;">
-  <img style="width:100%" src="https://github.com/krypto94/FPGA/blob/master/Images/Connection%20Box.png">
+  <img style="width:100%" src="https://github.com/krypto94/FPGA/blob/master/Images/connectionbox.jpg">
 </div>
 
 
